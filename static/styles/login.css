@@ -1,0 +1,78 @@
+body {
+    background: linear-gradient(135deg, #312f69, #36124e);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1 {
+    color: aliceblue;
+    font-size: 100px;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-weight: 800;
+    font-style: italic;
+    margin-bottom: 20px;
+    text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.5);
+    
+}
+
+form {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 7px;
+    padding-left: 12px;
+    margin: 5px 0;
+    border-radius: 12px;
+    border-style: solid;
+    font-family: 'Oswald', sans-serif;
+    box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+}
+
+input[type="submit"] {
+    background-color: #ff009d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+}
+.animation-submit {
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff21aa;
+    transition: background-color 0.3s, transform 0.3s;
+    transform: scale(1.06);
+}
+
+#change_register_method {
+    font-size: larger;
+    font-family: 'Oswald', sans-serif;
+    color: azure;
+    text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.5);
+}
+
+.animation-change-register-method {
+    transition: font-size 0.15s, color 0.15s;
+}
+
+#change_register_method:hover {
+    font-size: 19px;
+    color: white;
+}

@@ -1,0 +1,17 @@
+.info-item-title {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-weight: 300;
+    padding: 4px;
+    display: block;
+    align-self: top;
+}
+
+.general-info-item {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-left: 4px;
+}

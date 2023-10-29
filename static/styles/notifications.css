@@ -1,0 +1,101 @@
+
+.action-invitation {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px ;
+    border-width: 2px ;
+    border-color: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    border-style: solid;
+    box-shadow: 2px 2px 5px #0000007c;
+}
+
+#accept-invitation {
+    background: linear-gradient(135deg, #245834, #3ebd32);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#accept-invitation:hover {
+    background: linear-gradient(135deg, #2b683d, #47da3a);
+    transform: scale(1.03);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#decline-invitation {
+    background: linear-gradient(35deg, #861717, #d30404);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#decline-invitation:hover{
+    background: linear-gradient(35deg, #9b1b1b, #f10404);
+    transform: scale(1.03);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#invite-notification-box {
+    position: fixed;
+    bottom: 5px;
+    right: -300px; /* Initially hide the notification off-screen */
+    width: 300px;
+    background-color: #2e1533;
+    color: #fff;
+    z-index: 1000;
+    overflow: hidden;
+    transition: right 0.7s;
+    border-radius: 15px;
+    border-bottom-right-radius: 0px;
+}
+
+.invite-notification {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#invite-notification-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: medium;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+.close {
+    cursor: pointer;
+    color: white;
+    transition: color 0.2s;
+}
+
+.close:hover {
+    color: red;
+    transition: color 0.2s;
+}
+
+#notification-box {
+    position: fixed;
+    bottom: 5px;
+    right: -300px;
+    width: 300px;
+    background-color: #d10000;
+    color: #fff;
+    z-index: 1000;
+    overflow: hidden;
+    transition: right 0.7s;
+    border-radius: 15px;
+    border-bottom-right-radius: 0px;
+}
+
+.notification {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#notification-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: medium;
+    text-shadow: 2px 2px 5px #000000;
+}

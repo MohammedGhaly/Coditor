@@ -1,0 +1,67 @@
+.info-item {
+    position: relative;
+    width: 105px;
+    height: 105px;
+    display: inline-block;
+    background-color: #1e2029;
+    padding: 5px;
+    border-width: 0px ;
+    border-radius: 8px ;
+}
+
+.current-user-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+}
+
+.current-user-icon {
+    position: relative;
+    width: 75%;
+    height: 75%;
+    background-color: #3498db;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    z-index: 2; /* Set a higher z-index for the circle */
+    display: none;
+}
+
+.signal-effect {
+    position: absolute;
+    width: 15px;
+    display: none;
+    height: 15px;
+    background-color: rgba(0, 188, 235, 0.5);
+    border-radius: 50%;
+    animation: pulse 2s linear infinite;
+    z-index: 1; /* Set a lower z-index for the signal */
+    top: 50px; /* Adjust the positioning to fit your design */
+    left: 50px;
+}
+
+p{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(4.5);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(8);
+        opacity: 0;
+    }
+}

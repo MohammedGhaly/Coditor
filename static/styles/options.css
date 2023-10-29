@@ -1,0 +1,90 @@
+
+.dropdown-container,
+.option-btn,
+.option-btn:hover {
+    border-style: solid;
+    border-radius: 7px;
+    border-width: 0px;
+    margin-right: 3px;
+    margin-left: 3px;
+    box-shadow: 2px 2px 2px 3px #00000015;
+    border-width: 2px;
+    border-color: aliceblue;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.dropdown-container:hover {
+    transform: scale(1.03);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#run-btn {
+    background: linear-gradient(135deg, #245834, #3ebd32);
+}
+
+#run-btn:hover {
+    background: linear-gradient(135deg, #29643b, #48d43b);
+    transform: scale(1.03);
+}
+
+
+#invite-btn {
+    background: linear-gradient(45deg, #292458, #32b4bd);
+    color: white;
+}
+
+#invite-btn:hover {
+    background: linear-gradient(45deg, #302a66, #3dd7e2);
+    transform: scale(1.03);
+}
+
+#settings-btn {
+    background: linear-gradient(-45deg, #362458, #3f3f3f);
+    color: white;
+}
+
+#settings-btn:hover {
+    background: linear-gradient(-45deg, #402b68, #474747);
+    transform: scale(1.03);
+    color: white;
+}
+
+#lang-menu {
+    background: linear-gradient(135deg, #362458, #bd32a6);
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 600;
+    font-family: 'Oswald', sans-serif;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+    text-shadow: 2px 2px 10px #000000;
+}
+
+.dropdown-container:hover #lang-menu {
+    background: linear-gradient(135deg, #3f2a66, #ca36b1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+
+#lang-menu option:checked {
+    font-weight: bold;
+    color: white;
+}
+
+/* Style for dropdown items when expanded */
+#lang-menu:focus option {
+    font-weight: 670;
+    background-color: rgb(18, 17, 34);
+    color: #fff;
+    padding-top: 10px;
+}
+
+svg {
+    vertical-align: middle; /* Vertically center the SVG icon */
+    text-align: center
+}

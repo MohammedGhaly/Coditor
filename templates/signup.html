@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/login.css') }}"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Coditor</h1>
+    <form method="POST" action="">
+      {{ form.hidden_tag() }} {{ form.email }} {{ form.username }} {{
+      form.password }} {{ form.submit }}
+      <a id="change_register_method" href="{{url_for('login')}}">
+        already have an account</a
+      ><br />
+    </form>
+
+    <script
+      src="../static/js/register/register.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

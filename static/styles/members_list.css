@@ -1,0 +1,37 @@
+#members-list {
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    list-style: none;
+}
+
+.members-list {
+    text-align: center;
+    text-decoration: none;
+}
+
+.member-item-title {
+    text-decoration: none;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+#members-div {
+    width: 0 auto;
+    height: 0 auto;
+    max-height: 60px;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar:horizontal,
+::-webkit-scrollbar:vertical,
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:horizontal,
+::-webkit-scrollbar-thumb:vertical,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track:horizontal,
+::-webkit-scrollbar-track:vertical {
+    display: none;
+}
