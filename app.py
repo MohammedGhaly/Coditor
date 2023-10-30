@@ -1,4 +1,6 @@
 from flask import Flask, render_template, url_for, redirect, request, jsonify
+import sys
+sys.path.append("/path/to/Coditor")
 import os
 import json
 import pusher
@@ -12,7 +14,7 @@ from run_functions import run_code
 from api_key import pusher_key, pusher_app_id, pusher_secret
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 app.url_map.strict_slashes = False
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -242,6 +244,5 @@ def send_invitation_feedback(sender_id: str, sender_username: str,
 
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-    app.run(debug=True)
+    if __name__ == '__main__':
+        app.run(host='0.0.0.0', port=5000, debug=True)
