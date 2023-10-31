@@ -1,6 +1,5 @@
 from flask import Flask, render_template, url_for, redirect, request, jsonify
 import sys
-sys.path.append("/path/to/Coditor")
 import os
 import json
 import pusher
@@ -12,6 +11,7 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 from flask_bcrypt import Bcrypt
 from run_functions import run_code
 from api_key import pusher_key, pusher_app_id, pusher_secret
+from runner import run_user_code
 
 
 app = Flask(__name__, static_folder='static')
@@ -86,7 +86,7 @@ def run():
     language = request.form.get('language')
     coding_channel_name = request.form.get('coding_channel_name')
 
-    output = run_code(code, language)
+    output = run_user_code(code)
     if type(output) is str:
         print(output)
         pusher_client.trigger(coding_channel_name,

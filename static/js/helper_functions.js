@@ -89,6 +89,7 @@ function updateMembersList(members) {
 }
 
 function updateOutput(output) {
+  console.log(output)
   $(".output-p").text(output);
 }
 
