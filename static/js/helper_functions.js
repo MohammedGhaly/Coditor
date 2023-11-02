@@ -89,16 +89,15 @@ function updateMembersList(members) {
 }
 
 function updateOutput(output) {
-  console.log(output)
-  $(".output-p").text(output);
+  $(".output-p").val(output);
 }
 
 function disable_run_btn() {
-  $("#run-button").prop("disabled", true);
+  $("#run-btn").prop("disabled", true);
 }
 
 function enable_run_btn() {
-  $("#run-button").prop("disabled", false);
+  $("#run-btn").prop("disabled", false);
 }
 
 function updateLanguageMenu(lang) {

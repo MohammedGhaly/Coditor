@@ -9,7 +9,6 @@ from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from flask_bcrypt import Bcrypt
-from run_functions import run_code
 from api_key import pusher_key, pusher_app_id, pusher_secret
 from runner import run_user_code
 
@@ -86,12 +85,13 @@ def run():
     language = request.form.get('language')
     coding_channel_name = request.form.get('coding_channel_name')
 
-    output = run_user_code(code)
+    output = run_user_code(code, language)
     if type(output) is str:
         print(output)
-        pusher_client.trigger(coding_channel_name,
-                              'code_output', {'output': output})
-        return jsonify({'result': 'success'})
+        if coding_channel_name is not None:
+            pusher_client.trigger(coding_channel_name,
+                                  'code_output', {'output': output})
+        return jsonify({'result': 'success', 'output': output})
     else:
         return jsonify({'result': 'failed'})
 

@@ -1,15 +1,18 @@
-# Use a base image with the required programming language (e.g., Python)
-FROM python:3.8
+# Use a base image with Linux and basic development tools
+FROM ubuntu:latest
 
-# Install any required dependencies
-RUN pip install numpy
+# Update package lists
+RUN apt-get update
 
-# Create a directory for the user's code
+# Install essential development tools
+RUN apt-get install -y build-essential
+
+# Install Node.js and npm for JavaScript
+RUN apt-get install -y nodejs npm
+
+# Install Python and pip for Python code
+RUN apt-get install -y python3 python3-pip
+RUN pip3 install --upgrade pip
+
+# Set the working directory
 WORKDIR /user-code
-
-# Copy the code execution script and any necessary files
-# COPY execute_code.py /user-code/
-
-# Specify the default command to execute when the container starts
-# CMD ["python", "execute_code.py"]
-

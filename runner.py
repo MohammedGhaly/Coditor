@@ -4,17 +4,30 @@ import os
 docker_client = docker.from_env()
 
 
-def run_user_code(code):
-    code_file_path = '/docker_test/new_file.py'
+language_ex = {'Python': 'py', 'Javascript': 'js', 'C': 'c'}
+language_cmd = {'Python': 'python3',
+                'Javascript': 'node', 'C': 'gcc -o executable'}
+
+
+def run_user_code(code, language):
+    code_file_path = '/docker_test/new_file.' + language_ex[language]
     write_code_file(code_file_path, code)
 
-    container = docker_client.containers.create('code-execution-image', command='bash', detach=True, tty=True)
+    container = docker_client.containers.create(
+        'code-execution-image', command='bash', detach=True, tty=True)
     container.start()
 
-    container_path = '/user-code/new_file.py'
+    container_path = '/user-code/new_file.' + language_ex[language]
     copy_to(code_file_path, container_path, container.id)
-    
-    exec_info = container.exec_run(cmd=['python3', container_path], workdir='/')
+
+    if language != 'C':
+        exec_info = container.exec_run(
+            cmd=[language_cmd[language], container_path], workdir='/')
+    else:
+        container.exec_run(
+            cmd=[language_cmd[language], container_path], workdir='/')
+        exec_info = container.exec_run(
+            cmd=[f'./executable', container_path], workdir='/user-code/')
     exec_output = exec_info.output
     output = exec_output.decode('utf-8')
 

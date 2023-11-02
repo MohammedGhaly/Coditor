@@ -27,6 +27,11 @@
     transform: scale(1.03);
 }
 
+#run-btn:disabled {
+    background: linear-gradient(135deg, #393b3a, #a5b1a4);
+    color: #999; /* Change text color to a lighter gray */
+    cursor: not-allowed;
+}
 
 #invite-btn {
     background: linear-gradient(45deg, #292458, #32b4bd);
