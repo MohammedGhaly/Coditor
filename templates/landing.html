@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/landing.css') }}"
+    />
+    <title>Coditor</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='styles/images/coditor_logo.png') }}"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="span4">
+        <a id="header-coditor-logo" href="/">Coditor</a>
+      </div>
+      <div class="span8">
+        <a class="login" href="{{url_for('signup')}}">Sign Up</a>
+        <a class="signup" href="{{url_for('login')}}">Log In</a>
+      </div>
+    </header>
+
+    <div id="container">
+      <div class="section" id="div1">
+        <h1 id="title">Coditor</h1>
+        <h1 id="title-2">
+          write code in real-time with your fellow developers inside your
+          browser
+        </h1>
+      </div>
+      <div class="section" id="div2">
+        <div class="text-div">
+          <h1 class="div-title">Code with your team</h1>
+          <p class="div-info">
+            Start a Coditor session, write or copy code, then share it with
+            friends and colleagues. Pair program and troubleshoot together.
+          </p>
+        </div>
+        <div class="image-div">
+          <img
+            class="image"
+            src="{{ url_for('static', filename='styles/images/collaboration.png') }}"
+          />
+        </div>
+      </div>
+
+      <div class="section" id="div3">
+        <div class="image-div">
+          <img
+            class="image"
+            src="{{ url_for('static', filename='styles/images/code__run.png') }}"
+          />
+        </div>
+        <div class="text-div">
+          <h1 class="div-title">Run your code online</h1>
+          <p class="div-info">
+            you can run simple snippets of code and test for errors on your
+            browser.
+          </p>
+        </div>
+      </div>
+
+      <div class="section" id="div4">
+        <div class="text-div">
+          <h1 class="div-title">Code with your favourite language</h1>
+          <p class="div-info">
+            you can write and test with different programming languages.
+            currently supporting Python, JS and C languages.
+          </p>
+        </div>
+        <div class="image-div-s">
+          <img
+            class="image-s"
+            src="{{ url_for('static', filename='styles/images/multi__languages.png') }}"
+          />
+        </div>
+      </div>
+
+      <div class="section" id="div5">
+        <div class="text-div5">
+          <h1 class="div5-title">Choose your programming language</h1>
+          <p class="div-info">
+            Coditor supports syntax highlighting of supported programming
+            languages
+          </p>
+        </div>
+
+        <div class="div5-gifs">
+          <div class="column">
+            <h1 class="language-title">Python</h1>
+            <div class="gif">
+              <img
+                class="gif-img"
+                src="{{ url_for('static', filename='styles/images/python.gif') }}"
+                alt="python GIF"
+              />
+            </div>
+          </div>
+          <div class="column">
+            <h1 class="language-title">C</h1>
+            <div class="gif">
+              <img
+                class="gif-img"
+                src="{{ url_for('static', filename='styles/images/C.gif') }}"
+                alt="C GIF"
+              />
+            </div>
+          </div>
+          <div class="column">
+            <h1 class="language-title">Javascript</h1>
+            <div class="gif">
+              <img
+                class="gif-img"
+                src="{{ url_for('static', filename='styles/images/JS.gif') }}"
+                alt="JS GIF"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" id="div6">
+        <h1 class="div-title" id="div6-title">Join Coditor now</h1>
+        <p class="div-info">what are you waiting for...</p>
+        <button id="sign-btn">
+          <a id="sign-btn-a" href="{{url_for('login')}}">Login</a>
+        </button>
+        <button id="sign-btn">
+          <a id="sign-btn-a" href="{{url_for('signup')}}">Sign up</a>
+        </button>
+      </div>
+
+      <div class="about-section" id="div7">
+        <h1 class="div5-title">About</h1>
+        <div class="about-div">
+          <p class="about-info">
+            The inspiration for Coditor project arose from my own experiences as
+            a budding programmer. I vividly recall countless instances when I
+            wished I could collaborate with friends or mentors in real-time,
+            working on code together, and receiving immediate feedback. This
+            desire for seamless collaboration and the excitement of witnessing
+            code come to life instantly motivated me to embark on this journey.
+            I wanted to create a platform that fosters learning, creativity, and
+            teamwork, offering a space where coding enthusiasts from across the
+            globe could connect, code together, and bring their ideas to
+            fruition in real-time. This project is a manifestation of my passion
+            for coding and my desire to make collaborative coding accessible to
+            all. This project was developed as apart of
+            <a href="https://www.alxafrica.com/" style="color: white"
+              >ALX Software Engineering program.</a
+            ><br />
+            <a
+              style="color: white"
+              href="https://github.com/MohammedGhaly/Coditor"
+              >project github repository</a
+            >
+          </p>
+        </div>
+        <div id="grid-container">
+          <div id="links-div">
+            <div class="column">
+              <div class="link-gif">
+                <a target="_blank" href="https://github.com/MohammedGhaly">
+                  <img
+                    class="link-gif-img"
+                    src="{{ url_for('static', filename='styles/images/github.png') }}"
+                    alt="GIF 1"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="link-gif">
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/mohammed-ghaly-16a401150/"
+                >
+                  <img
+                    class="link-gif-img"
+                    src="{{ url_for('static', filename='styles/images/linkedin.png') }}"
+                    alt="GIF 1"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="link-gif">
+                <a
+                  target="_blank"
+                  href="https://x.com/XXXGhalytacion?t=MBWq2xW4G_hUytgPAly_sw&s=08"
+                >
+                  <img
+                    class="link-gif-img"
+                    src="{{ url_for('static', filename='styles/images/x.png') }}"
+                    alt="GIF 1"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

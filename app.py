@@ -146,7 +146,7 @@ def members():
 
 @app.route('/')
 def home():
-    return redirect(url_for("login"))
+    return render_template("landing.html")
 
 
 @app.route('/editor', methods=['GET', 'POST'])
