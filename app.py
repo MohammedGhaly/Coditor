@@ -88,7 +88,7 @@ def run():
     output = run_user_code(code, language)
     if type(output) is str:
         print(output)
-        if coding_channel_name is not None:
+        if coding_channel_name not in [None, '']:
             pusher_client.trigger(coding_channel_name,
                                   'code_output', {'output': output})
         return jsonify({'result': 'success', 'output': output})
@@ -104,9 +104,6 @@ def message():
     user = request.form.get('user_username')
     coding_channel_name = request.form.get('coding_channel_name')
 
-    print(f'row: {row}')
-    print(f'column: {column}')
-    print(coding_channel_name)
     pusher_client.trigger(coding_channel_name, 'my-event',
                           {'forwarded': content, 'row': row, 'column': column, 'user': current_user.username})
 

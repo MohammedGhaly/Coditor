@@ -93,7 +93,8 @@ class User {
     this.session.channel.bind("joined", (data) => {
       if (data.user !== this.username) {
         notify(`${data.user} joined the session`, "joined");
-        if (this.iamalone()) {
+	console.log(`isrunning = ${isRunning}`)
+        if (!isRunning) {
           startTimer();
         }
         if (!this.session.session_members_list.includes(data.user)) {
@@ -129,8 +130,9 @@ class User {
 
   iamalone() {
     return (
-      this.session.session_members_list.length === 1 &&
-      this.session.session_members_list[0] === this.username
+      this.session.session_members_list.length <= 1 &&
+      (this.session.session_members_list[0] === this.username ||
+      this.session.session_members_list[0] == undefined)
     );
   }
 

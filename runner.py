@@ -1,6 +1,8 @@
 import tarfile
 import docker
 import os
+import subprocess
+import uuid
 docker_client = docker.from_env()
 
 
@@ -10,24 +12,24 @@ language_cmd = {'Python': 'python3',
 
 
 def run_user_code(code, language):
-    code_file_path = '/docker_test/new_file.' + language_ex[language]
+    file_name = str(uuid.uuid4())
+    code_file_path = f'/docker_test/{file_name}.{language_ex[language]}'
     write_code_file(code_file_path, code)
 
     container = docker_client.containers.create(
         'code-execution-image', command='bash', detach=True, tty=True)
     container.start()
 
-    container_path = '/user-code/new_file.' + language_ex[language]
+    container_path = f'/user-code/{file_name}.{language_ex[language]}'
     copy_to(code_file_path, container_path, container.id)
 
     if language != 'C':
         exec_info = container.exec_run(
             cmd=[language_cmd[language], container_path], workdir='/')
     else:
-        container.exec_run(
-            cmd=[language_cmd[language], container_path], workdir='/')
+        compile_c_code(file_name, container.id)
         exec_info = container.exec_run(
-            cmd=[f'./executable', container_path], workdir='/user-code/')
+            cmd=[f'./{file_name}', container_path], workdir='/user-code/')
     exec_output = exec_info.output
     output = exec_output.decode('utf-8')
 
@@ -35,6 +37,18 @@ def run_user_code(code, language):
     container.remove()
 
     return (output)
+
+
+def compile_c_code(file_name, container_id):
+    command = f"gcc -w -o {file_name} /user-code/{file_name}.c"
+    compile_command = f"docker exec {container_id} {command}"
+    result = subprocess.run(compile_command, shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+
+    if result.returncode == 0:
+        print("Compilation successful")
+    else:
+        print("Compilation failed")
+        print(result.stderr.decode('utf-8'))
 
 
 def copy_to(src, dst, name):

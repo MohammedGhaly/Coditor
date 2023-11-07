@@ -108,6 +108,10 @@ $("document").ready(function () {
   });
 
   window.addEventListener("beforeunload", function (e) {
-    user.leave_session();
+    if (!user.iamalone()) {
+      console.log(user.iamalone())
+      user.leave_session();
+      console.log(user.session.session_members_list)
+    }
   });
 });
