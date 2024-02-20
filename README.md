@@ -51,7 +51,15 @@ Coditor is a web application that provides a collaborative code editing experien
    flask init-db
    ```
 
-4. Run the application:
+4. Create api_key.py file with:
+
+```
+pusher_app_id = 'PUSHER_API_DATA'
+pusher_key = 'PUSHER_API_DATA'
+pusher_secret = 'PUSHER_API_DATA'
+```
+
+5. Run the application:
    ```bash
    python app.py
    ```
