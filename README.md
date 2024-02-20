@@ -9,7 +9,6 @@ Coditor is a web application that provides a collaborative code editing experien
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
